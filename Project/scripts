@@ -1,0 +1,60 @@
+CREATE TABLE users (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    fullname VARCHAR(100),
+    email VARCHAR(100),
+    contact VARCHAR(20),
+    fulladdress TEXT
+);
+
+INSERT INTO users (username, password) VALUES ('testUser', MD5('testPassword'));
+
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT
+);
+INSERT INTO categories (name) VALUES ('tops');
+INSERT INTO categories (name) VALUES ('pants');
+INSERT INTO categories (name) VALUES ('shoes');
+INSERT INTO categories (name) VALUES ('accessories');
+
+CREATE TABLE items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    category_id INT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10,2),
+    image_url VARCHAR(512),
+    hover_image_url VARCHAR(512),
+    -- ... other columns ...
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+
+
+INSERT INTO `items` (`id`, `category_id`, `name`, `description`, `price`, `image_url`, `hover_image_url`) VALUES
+(7, 1, 'Urban Minimal Tee', 'Simple white tee with a modern cut', 19.99, 'https://images.unsplash.com/photo-1633966887768-64f9a867bdba?auto=format&fit=crop&q=80&w=2603&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://images.unsplash.com/photo-1633966887768-64f9a867bdba?auto=format&fit=crop&q=80&w=2603&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(8, 1, 'Retro Vibe Polo', 'Polo shirt with a retro 80s color scheme', 21.99, 'https://images.unsplash.com/photo-1622622016645-7b7065e7c129?auto=format&fit=crop&q=80&w=2564&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://images.unsplash.com/photo-1622621905395-045bd5f3f991?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(9, 1, 'Denim Blue Button-up', 'Casual blue denim button-up for any occasion', 25.99, 'https://images.unsplash.com/photo-1532938982164-5be4e1cd3472?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://images.unsplash.com/photo-1592736158789-303583e8db16?auto=format&fit=crop&q=80&w=2535&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(10, 1, 'Neon Splash Tee', 'Black tee with a neon paint splash design', 20.99, 'https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&q=80&w=2564&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://images.unsplash.com/photo-1527718641255-324f8e2d0421?auto=format&fit=crop&q=80&w=2565&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(11, 1, 'Summer Breeze Tank', 'Light tank top perfect for summer', 22.99, 'https://plus.unsplash.com/premium_photo-1690820317623-c1b785f85732?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://plus.unsplash.com/premium_photo-1690820317577-eb4f8cd6ccd4?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(12, 1, 'Muted Tones Tee', 'Tee with muted earthy tones and a relaxed fit', 19.99, 'https://images.unsplash.com/photo-1618677603286-0ec56cb6e1b5?auto=format&fit=crop&q=80&w=2522&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://images.unsplash.com/photo-1618677603544-51162346e165?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+CREATE TABLE cart (
+    cart_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id INT(11) UNSIGNED NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE cart_items (
+    cart_item_id INT AUTO_INCREMENT PRIMARY KEY,
+    cart_id INT UNSIGNED NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (cart_id) REFERENCES cart(cart_id),
+    FOREIGN KEY (product_id) REFERENCES items(id)
+);

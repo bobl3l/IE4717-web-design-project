@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Bigshot One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>  
+ <div id="bg"/>
+<body>
+    <a href="home.php"><button class="exit-button"><i class="fa fa-arrow-left" style="font-size: 24px; color: #513F3A;"></i>   <u>Back</u></button></a>
+<center>
+    <div id="login">
+        <img src="graphics/logo.png" style="object-fit: contain;height: 270px;"/>
+        <h1 style="font-size: 50px;">Welcome to our store!</h1>
+        <br/>
+        <form action="./database/process_login.php" method="POST">
+            <input type="text" id="username" name="username" placeholder="Username"><br>
+        
+                <input type="password" id="password" name="password" placeholder="Password">
+                <i class="fa fa-eye" style="color: #00000067;font-size: 20px;left: 56.5%;margin-top: 10px;position: absolute;"onclick="togglePasswordVisibility(this)"></i>
+                       
+            <br/>
+            <input type="submit" class="actionbutton" id="loginButton" name="loginButton" value="Login">
+            <br/><br/>
+        </form>
+        <div id="register-message"></div>
+        <a href="register.html">No account? Sign up here</a>
+    </div>
+</center>
+
+<script>
+    document.querySelector("form").addEventListener("submit", function(event){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+    
+        if (!username || !password){
+            alert("Please fill out all fields");
+            event.preventDefault();
+        }
+    });
+    function togglePasswordVisibility(x) {
+        x.classList.toggle("fa-eye-slash");
+        var passwordInput = document.getElementById("password");
+        var type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const registerSuccessMessage = urlParams.get('success');
+    if (registerSuccessMessage){
+        document.getElementById("register-message").textContent = registerSuccessMessage;
+        document.getElementById("register-message").style.color = "green";
+    }
+
+    const loginErrorMessage = urlParams.get('error');
+    if (loginErrorMessage){
+        document.getElementById("register-message").textContent = loginErrorMessage;
+        document.getElementById("register-message").style.color = "red";
+    }
+</script>
+
+</body>
+</html>

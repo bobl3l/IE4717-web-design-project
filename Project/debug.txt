@@ -1,0 +1,6 @@
+Array
+(
+    [size] => M
+    [product_id] => 2
+    [quantity] => 1
+)

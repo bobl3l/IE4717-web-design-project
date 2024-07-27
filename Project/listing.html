@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Unica One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bigshot One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Quantico' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+<link rel="stylesheet" href="style.css">
+<style>
+
+
+</style>
+
+</head>
+
+<body>
+
+
+    <div id="navbar">
+        <nav>
+            <ul>
+                <li><a href="" class="active">Sales</a></li>
+                <li><a href="">Tops</a></li>
+                <li><a href="">Pants</a></li>
+                <li><a href="">Shoes</a></li>
+                <li><a href="">Accessories</a></li>            
+            </ul>
+            <img src="graphics/logo.png"/>
+            
+        </nav>
+        <div class="nav-right">
+        <a href="profile.html">
+          <i class="fa fa-id-card-o" style="font-size: 30px; padding-right: 10px;" ></i>
+        </a>
+            <i class="fa fa-shopping-cart" style="font-size: 30px;"></i>
+        </div>
+    </div>
+
+    <button onclick="topFunction()" id="upButton" title="Go to top"><i class="fa fa-chevron-up" style="font-size: 24px;"></i><br/>Top</button>
+
+    <div style="padding-top: 20%;">
+        <div id="item" onclick="openForm()" ><center>
+          <img src="https://limitededt.com/cdn/shop/files/166914036M-WHT-1_600x.jpg?v=1694591442" onmouseover="this.src='https://limitededt.com/cdn/shop/files/166914036M-WHT_600x.jpg?v=1694591442';" onmouseleave="this.src='https://limitededt.com/cdn/shop/files/166914036M-WHT-1_600x.jpg?v=1694591442';" />
+        <h4>FINE CITY WHITE TEE</h4>
+        <h5 style="color: red;"><s style="color: #513F3A;">$ 69</s>&nbsp; $39 </h5>
+    </center>
+  </div>    
+  <div style="padding-top: 20%;">
+    <div id="item" onclick="openForm()" ><center>
+      <img src="https://limitededt.com/cdn/shop/files/166914036M-WHT-1_600x.jpg?v=1694591442" onmouseover="this.src='https://limitededt.com/cdn/shop/files/166914036M-WHT_600x.jpg?v=1694591442';" onmouseleave="this.src='https://limitededt.com/cdn/shop/files/166914036M-WHT-1_600x.jpg?v=1694591442';" />
+    <h4>FINE CITY WHITE TEE</h4>
+    <h5 style="color: red;"><s style="color: #513F3A;">$ 69</s>&nbsp; $39 </h5>
+</center>
+</div>  
+    </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="form-popup" id="myForm">
+            <form action="" class="form-container">
+              <div style="float: right;"onclick="closeForm()"><i class="fa fa-window-close" style="font-size: 30px;"></i></div>
+                <div style="height: 75%;max-height: 75%;">
+                    <div style="width: 50%;float: left;"><center>
+                      <img class="display-img" id="display-img"/><br>
+                      <img class="img-button" id="img1" src="https://limitededt.com/cdn/shop/files/166914036M-WHT-1_600x.jpg?v=1694591442" onclick="displayIMG(this.id)"/>
+                      <img class="img-button" id="img2" src="https://limitededt.com/cdn/shop/files/166914036M-WHT_600x.jpg?v=1694591442" onclick="displayIMG(this.id)"/>
+                      <img class="img-button" id="img3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQ1bJvelZhwLPIAApn6LyCefDL8Z_9nktmuxTPXn9nF6SwZaLuSqSuNIR62Z5ev_zmzE&usqp=CAU" onclick="displayIMG(this.id)"/>
+                      <img class="img-button" id="img4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ0QN9mTtjIqDS_GXzxrb7Xa2QCKmtDb4o9g4632QgHXKJhs-0yFgWfO09gOY7EsIxVyU&usqp=CAU" onclick="displayIMG(this.id)"/>
+
+                    </center>
+                    </div>
+                  <div style="float: left;width: 50%;">
+                        <h1>FINE CITY WHITE TEE</h1>
+                        <h3>$69</h3>
+                        <h3>Size:</h3>
+                        <button class="cart-button" onclick="sizing()" id="XS">XS</button>
+                        <button class="cart-button" onclick="sizing()" id="S">S</button>
+                        <button class="cart-button" onclick="sizing()" id="M">M</button>
+                        <button class="cart-button" onclick="sizing()" id="L">L</button>
+                        <button class="cart-button" onclick="sizing()" id="XL">XL</button><br>
+                          <input type="submit" id="addToCart" name="addToCart" value="Add to cart"><button class="cart-button"><i class="fa fa-heart-o"></i>
+                          </button>
+                          <hr style="margin:3% 2%;border-bottom: 2px solid #bbb; width: 60%;">
+                          <h3>Description:</h3>
+                          <pre><h5>
+                            Laundry Guide: Machine Washing 
+                            Material: cotton blend 
+                            Season: Spring, Summer, Fall/Fall
+                          </h5></pre>
+                  </div>
+                </div>
+                <hr style="margin:2% 0;border: 4px dotted #bbb; width: 99%;border-top: none;">
+                <div style="margin: 2%;height: 20%;">
+                  <center>
+                    <h5>Related Products</h5>
+
+                </center>
+                </div>
+                
+            </form>
+          </div>
+        <footer>
+          <center>
+            <br/>
+            <h2>FOLLOW US</h2><br/>
+            <img src="graphics/ss icons.png"/>
+            <h6>© copyright 2023. West Coast Collection. All rights reserved</h6>
+        </center>
+        </footer>
+</body>
+<script>
+
+document.getElementById("display-img").src=document.getElementById("img1").src;
+
+function displayIMG(x){
+switch(x){
+  case 'img1': 
+  document.getElementById("display-img").src=document.getElementById("img1").src;
+  break;
+  case 'img2': 
+  document.getElementById("display-img").src=document.getElementById("img2").src;
+  break;
+  case 'img3': 
+  document.getElementById("display-img").src=document.getElementById("img3").src;
+  break;
+  case 'img4': 
+  document.getElementById("display-img").src=document.getElementById("img4").src;
+  break;
+}
+}
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
+function sizing(x) {
+switch (x) {
+    case 'XS':
+    document.getElementById("S").focus = false;
+    document.getElementById("M").focus = false;
+    document.getElementById("L").focus = false;
+    document.getElementById("XL").focus = false;
+    break;
+    case 'S':
+    document.getElementById("S").focus = false;
+    document.getElementById("M").focus = false;
+    document.getElementById("XS").focus = false;
+    document.getElementById("XL").focus = false;
+    break;
+    case 'M':
+    document.getElementById("S").focus = false;
+    document.getElementById("M").focus = false;
+    document.getElementById("XS").focus = false;
+    document.getElementById("XL").focus = false;
+    break;
+    case 'L':
+    document.getElementById("S").focus = false;
+    document.getElementById("M").focus = false;
+    document.getElementById("XS").focus = false;
+    document.getElementById("XL").focus = false;
+    break;
+    case 'XL':
+    document.getElementById("S").focus = false;
+    document.getElementById("M").focus = false;
+    document.getElementById("L").focus = false;
+    document.getElementById("XS").focus = false;
+    break;
+}
+}
+
+let mybutton = document.getElementById("upButton");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    mybutton.style.display = "block";
+    
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+</script>    
+</html>
